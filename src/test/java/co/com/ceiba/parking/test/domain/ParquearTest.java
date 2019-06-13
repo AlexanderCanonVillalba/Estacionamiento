@@ -9,17 +9,5 @@ import co.com.ceiba.parqueadero.domain.Vehiculo;
 
 public class ParquearTest {
 
-	@Test
-	public void preparar() {
-		
-		// arrange
-		VehiculoDataBuilder vehiculoDataBuilder  = new VehiculoDataBuilder();
-		// act
-		Vehiculo vehiculo  = vehiculoDataBuilder.construir();
-		
-		// asset
-		assertNotNull(vehiculo);
-		
-	}
 	
 }

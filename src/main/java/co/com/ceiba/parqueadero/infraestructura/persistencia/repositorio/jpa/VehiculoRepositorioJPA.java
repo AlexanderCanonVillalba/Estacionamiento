@@ -10,5 +10,5 @@ import co.com.ceiba.parqueadero.infraestructura.persistencia.entidades.VehiculoE
 public interface VehiculoRepositorioJPA extends JpaRepository<VehiculoEntidad, Long>{
 
 	
-	public VehiculoEntidad buscarPlaca(String licensePlate);
+	//public VehiculoEntidad buscarPlaca(String licensePlate);
 }
