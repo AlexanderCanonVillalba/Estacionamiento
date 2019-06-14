@@ -26,8 +26,7 @@ public class VehiculoRepositorioImpl implements VehiculoRepositorio{
 	
 	
 	@Override
-	public Vehiculo registrar(Vehiculo vehiculo) {
-		
+	public Vehiculo registrar(Vehiculo vehiculo) {		
 		return VehiculoMapper.domain(vehiculoRepositorioJPA.save(VehiculoMapper.entidad(vehiculo)));
 	}
 

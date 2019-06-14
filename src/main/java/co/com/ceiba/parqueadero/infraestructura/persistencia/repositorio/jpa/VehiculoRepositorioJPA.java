@@ -11,4 +11,5 @@ public interface VehiculoRepositorioJPA extends JpaRepository<VehiculoEntidad, L
 
 	
 	//public VehiculoEntidad buscarPlaca(String licensePlate);
+	
 }
