@@ -13,7 +13,9 @@ public class VehiculoService {
 
 	private VehiculoRepositorio  vehiculoRepositorio ;
 	
-	
+	public VehiculoService(VehiculoRepositorio vehiculoRepositorio) {
+		this.vehiculoRepositorio = vehiculoRepositorio;
+	}
 	
 	public Vehiculo registrar(Vehiculo vehiculo){
 		return	vehiculoRepositorio.registrar(vehiculo);			

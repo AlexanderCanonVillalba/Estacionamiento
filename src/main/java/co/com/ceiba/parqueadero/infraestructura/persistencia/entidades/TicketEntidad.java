@@ -25,7 +25,7 @@ public class TicketEntidad {
 	private long id  ;
 	
 	@ManyToOne
-	@JoinColumn(name = "vehiculoid")
+	@JoinColumn(name = "vehiculoid" , nullable = false)
 	private VehiculoEntidad vehiculoEntidad ;
 	
 	@Column(name = "fechaini")

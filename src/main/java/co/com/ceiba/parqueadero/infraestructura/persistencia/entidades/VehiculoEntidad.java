@@ -23,6 +23,6 @@ public class VehiculoEntidad {
 	@Column(name = "placa")
 	private String placa ;
 	
-	@Column(name = "tipoVehiculo")
+	@Column(name = "tipo_vehiculo")
 	private String tipoVehiculo  ;
 }

@@ -1,18 +1,16 @@
 package co.com.ceiba.parqueadero.infraestructura.controlador;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.context.annotation.ApplicationScope;
 
-import ch.qos.logback.core.status.Status;
 import co.com.ceiba.parqueadero.aplication.service.VehiculoService;
 import co.com.ceiba.parqueadero.domain.Vehiculo;
 import io.swagger.annotations.Api;
@@ -28,8 +26,8 @@ public class VehiculoControlador {
 	
 	private VehiculoService vehiculoService ;
 	
-	public VehiculoControlador(VehiculoService vehiculo) {
-	  this.vehiculoService  =  vehiculo ;
+	public VehiculoControlador(VehiculoService vehiculoService) {
+	  this.vehiculoService  =  vehiculoService ;
 	}
 	
 	@GetMapping
@@ -42,11 +40,19 @@ public class VehiculoControlador {
 	}
 	
 	
-	@PostMapping
+	@RequestMapping(value = "/listavehiculos" , method  = RequestMethod.GET)
 	@ApiResponses(value = {
 			@ApiResponse(message = "Listado de vehiculos", code = 200), @ApiResponse(code = 200 , message = "No se ha encontrado ningun vehiculo")
 	})
 	public ResponseEntity<List<Vehiculo>> listar() {
+		
+		System.err.println("validandooooooooooo............");
+		List<Vehiculo> vehiculos  = new ArrayList<Vehiculo>();
+		Vehiculo vehiculo = new Vehiculo();
+		vehiculo.setPlaca("AC--309");
+		vehiculo.setTipoVehiculo("Carro");
+		vehiculos.add(vehiculo);
+		
 	   return new ResponseEntity<>(vehiculoService.listar(), HttpStatus.OK);
 	}
 	
