@@ -9,12 +9,15 @@ import org.springframework.stereotype.Component;
 public class Parquear {
 	
 	
-	public Ticket registrarEntrada(Vehiculo vehiculo) {
+	public Vehiculo registrarEntrada(Vehiculo vehiculo) {
 		
+		  return null ;
+		/*
 		Ticket ticket  = new Ticket();
 		ticket.setVehiculo(vehiculo.getId());
 		ticket.setFechaini(Calendar.getInstance().getTime());
 		return  ticket ;
+		*/
 	}
 	
 	

@@ -1,5 +1,7 @@
 package co.com.ceiba.parqueadero.infraestructura.persistencia.entidades;
 
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -25,4 +27,14 @@ public class VehiculoEntidad {
 	
 	@Column(name = "tipo_vehiculo")
 	private String tipoVehiculo  ;
+	
+	@Column(name = "fechaini")
+	private Date fechaini ;
+	
+	@Column(name = "fechafin")
+	private Date fechafin ;
+
+	@Column(name = "horaini")
+	private String horaini;
+	
 }

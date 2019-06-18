@@ -9,7 +9,7 @@ public class Ticket {
 
 	
 	private long id  ;
-	private long vehiculo ;
+	private Vehiculo vehiculo ;
 	private Date fechaini;
 	private Date fechafin  ;
 	private double precio  ;

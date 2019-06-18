@@ -19,7 +19,7 @@ public class ParquearService {
     }
    
 	
-	public Ticket registrarEntrada(Vehiculo vehiculo) {
+	public Vehiculo registrarEntrada(Vehiculo vehiculo) {
 	   return  parquear.registrarEntrada(vehiculo);	
 	}
 

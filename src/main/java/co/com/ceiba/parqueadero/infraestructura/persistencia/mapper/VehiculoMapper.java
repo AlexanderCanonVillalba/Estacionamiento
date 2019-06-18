@@ -11,8 +11,9 @@ public class VehiculoMapper {
 		Vehiculo vehiculo = new Vehiculo();
 		vehiculo.setId(vehiculoEntidad.getId());
 		vehiculo.setPlaca(vehiculoEntidad.getPlaca());
-		vehiculo.setTipoVehiculo(vehiculoEntidad.getTipoVehiculo());
-		
+		vehiculo.setTipovehiculo(vehiculoEntidad.getTipoVehiculo());
+		vehiculo.setFechaini(vehiculoEntidad.getFechaini());
+		vehiculo.setHoraini(vehiculoEntidad.getHoraini());
 		return vehiculo;
 	}
 	
@@ -22,7 +23,9 @@ public class VehiculoMapper {
 		VehiculoEntidad vehiculoEntidad  = new VehiculoEntidad();
 		vehiculoEntidad.setId(vehiculo.getId());
 		vehiculoEntidad.setPlaca(vehiculo.getPlaca());
-		vehiculoEntidad.setTipoVehiculo(vehiculo.getTipoVehiculo());
+		vehiculoEntidad.setTipoVehiculo(vehiculo.getTipovehiculo());
+		vehiculoEntidad.setFechaini(vehiculo.getFechaini());
+		vehiculoEntidad.setHoraini(vehiculo.getHoraini());
 		return vehiculoEntidad;
 	}
 }
