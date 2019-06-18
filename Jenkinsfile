@@ -23,7 +23,7 @@ stages{
  echo "------------>Checkout<------------"
  
  checkout([$class: 'GitSCM', branches: [[name: '*/master']],doGenerateSubmoduleConfigurations: false, extensions: [], gitTool:'Git_Centos', submoduleCfg: [], 
- userRemoteConfigs: [[credentialsId:'GitHub_yucaci24', 
+ userRemoteConfigs: [[credentialsId:'GitHub_Alexander10', 
  url:'https://github.com/AlexanderCanonVillalba/Estacionamiento']]])}
  }
  }
