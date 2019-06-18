@@ -5,9 +5,10 @@ pipeline {
  }
 
 options {
-
+//Mantener artefactos y salida de consola para el # específico de ejecuciones
+recientes del Pipeline.
 buildDiscarder(logRotator(numToKeepStr: '3'))
-   
+//No permitir ejecuciones concurrentes de Pipeline
 disableConcurrentBuilds()
  }
 
@@ -17,13 +18,12 @@ disableConcurrentBuilds()
  }
 
 stages{
- stage('Checkout') {
- steps{
+ stage('Checkout') {  
  echo "------------>Checkout<------------"
  
  checkout([$class: 'GitSCM', branches: [[name: '*/master']],doGenerateSubmoduleConfigurations: false, extensions: [], gitTool:'Git_Centos', submoduleCfg: [], 
  userRemoteConfigs: [[credentialsId:'GitHub_Alexander10', 
- url:'https://github.com/AlexanderCanonVillalba/Estacionamiento']]])}
+ url:'https://github.com/AlexanderCanonVillalba/Estacionamiento']]])
  }
  }
  
@@ -44,13 +44,18 @@ stages{
  stage('Static Code Analysis') {
 	 steps{
 	 echo '------------>Análisis de código estático<------------'
-	 
+	 withSonarQubeEnv('Sonar') {
+	sh "${tool name: 'SonarScanner',
+	type:'hudson.plugins.sonar.SonarRunnerInstallation'}/bin/sonar-scanner
+	
+	   }
 	   }
 	  }
 	  
 	 stage('Build') {
 	 steps {
 	 echo "------------>Build<------------"
+	 sh 'gradle --b ./build.gradle build -x test'
 	 }
 	}
  }
@@ -63,8 +68,13 @@ stages{
 	 success {
 	 echo 'This will run only if successful'
 	 }
+	 
 	 failure {
 	 echo 'This will run only if failed'
+	 mail (to: 'erney.canon@ceiba.com.co',subject: "Failed
+	 Pipeline:${currentBuild.fullDisplayName}",body: "Something is wrong
+	 with ${env.BUILD_URL}")
+	 
 	 }
 	 unstable {
 	 echo 'This will run only if the run was marked as unstable'
