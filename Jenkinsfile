@@ -5,10 +5,9 @@ pipeline {
  }
 
 options {
-//Mantener artefactos y salida de consola para el # específico de ejecuciones
-recientes del Pipeline.
+
 buildDiscarder(logRotator(numToKeepStr: '3'))
-//No permitir ejecuciones concurrentes de Pipeline
+   
 disableConcurrentBuilds()
  }
 
