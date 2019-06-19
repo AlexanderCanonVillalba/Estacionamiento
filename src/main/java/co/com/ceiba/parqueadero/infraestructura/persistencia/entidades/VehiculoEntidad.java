@@ -11,9 +11,12 @@ import javax.persistence.Table;
 
 import co.com.ceiba.parqueadero.domain.Vehiculo;
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 
-@Data
+@Setter
+@Getter
 @Entity
 @Table(name  =  "vehiculo")
 public class VehiculoEntidad {

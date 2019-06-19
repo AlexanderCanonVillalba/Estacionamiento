@@ -1,9 +1,12 @@
 package co.com.ceiba.parqueadero.infraestructura.controlador;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataAccessException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -19,6 +22,7 @@ import co.com.ceiba.parqueadero.domain.Vehiculo;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
+import io.swagger.models.Response;
 
 @CrossOrigin(origins = {"http://localhost:4200"})
 @RestController
@@ -32,9 +36,15 @@ public class VehiculoControlador {
 	
 	
 	@PostMapping(value = "/registrarvehiculo")	
-	public Vehiculo registrar(@RequestBody Vehiculo vehiculo) {
-		System.err.println("validar fecha........" +  vehiculo.getFechaini());
-		 return vehiculoService.registrar(vehiculo);
+	public ResponseEntity<?> registrar(@RequestBody Vehiculo vehiculo) {
+	
+		try {
+			 return new ResponseEntity<Vehiculo>(vehiculoService.registrar(vehiculo), HttpStatus.OK);
+		} catch (RuntimeException e) {					
+		      Map<String, String> map  = new HashMap<String, String>();
+		      map.put("mensaje", e.getMessage());
+			return new ResponseEntity<Map<String, String>>(map , HttpStatus.INTERNAL_SERVER_ERROR);
+		}
 		
 	}
 	

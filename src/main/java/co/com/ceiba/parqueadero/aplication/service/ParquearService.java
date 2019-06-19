@@ -19,18 +19,5 @@ public class ParquearService {
     }
    
 	
-	public Vehiculo registrarEntrada(Vehiculo vehiculo) {
-	   return  parquear.registrarEntrada(vehiculo);	
-	}
-
 	
-	
-	public Ticket registrarSalida(Vehiculo vehiculo) {
-		return parquear.registrarSalida(vehiculo); 		
-	}
-	
-	
-	public double calcularPrecio(Ticket ticketEntrada) {
-		return parquear.calcularPrecio(ticketEntrada);
-	} 
 }
