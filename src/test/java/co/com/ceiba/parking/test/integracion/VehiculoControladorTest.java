@@ -19,9 +19,9 @@ import org.springframework.web.context.WebApplicationContext;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-
-
+import co.com.ceiba.parking.test.databuilder.VehiculoDataBuilder;
 import co.com.ceiba.parqueadero.Start;
+import co.com.ceiba.parqueadero.domain.Vehiculo;
 
 
 
@@ -44,6 +44,24 @@ public class VehiculoControladorTest {
 		mvc.perform(get("/api/listavehiculos").contentType(MediaType.APPLICATION_JSON))
 				.andExpect(status().is2xxSuccessful());
 
+	}
+	
+	
+	@Test
+	public void registrarVehiculos() throws Exception {
+		Vehiculo vehiculo = new VehiculoDataBuilder().buil();
+		mvc.perform(post("api/registrarvehiculo").content(asJsonString(vehiculo)).contentType(MediaType.APPLICATION_JSON))
+				.andExpect(status().is2xxSuccessful());
+
+	}
+	
+	
+	private static String asJsonString(final Object obj) {
+		try {
+			return new ObjectMapper().writeValueAsString(obj);
+		} catch (Exception e) {
+			throw new RuntimeException(e);
+		}
 	}
 	
 }
