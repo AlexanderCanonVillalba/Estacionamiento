@@ -29,7 +29,7 @@ public class ParquearTest {
 		VehiculoDataBuilder vehiculoDataBuilder = new VehiculoDataBuilder();
 		List<Vehiculo> listavehiculos  = new ArrayList<Vehiculo>();
 		listavehiculos.add(vehiculoDataBuilder.buil());
-		Parquear.consultarReserva(listavehiculos, "Carro");
+		Parquear.consultarReservaCarro(listavehiculos);
 	}
         
 	
@@ -38,7 +38,7 @@ public class ParquearTest {
 		VehiculoDataBuilder vehiculoDataBuilder = new VehiculoDataBuilder();
 		List<Vehiculo> listavehiculos  = new ArrayList<Vehiculo>();
 		listavehiculos.add(vehiculoDataBuilder.buil());
-		Parquear.consultarReserva(listavehiculos, "Moto");
+		Parquear.consultarReservaMotocicleta(listavehiculos);
 	}
         
 	

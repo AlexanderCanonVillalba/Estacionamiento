@@ -49,14 +49,14 @@ public class Parquear {
 	}
 	
 	
-	private void consultarReservaCarro(List<Vehiculo> lisVehiculos) {
+	public void consultarReservaCarro(List<Vehiculo> lisVehiculos) {
 		if ((lisVehiculos.stream().filter(list -> list.getTipovehiculo().equals("Carro")).collect(Collectors.toList()).size()) >= 20)	
 			  throw new RuntimeException("No se permiten mas carros ");
 			 
 			
 	}
 	
-	private void consultarReservaMotocicleta(List<Vehiculo> lisVehiculos) {
+	public void consultarReservaMotocicleta(List<Vehiculo> lisVehiculos) {
 		
 		 if ((lisVehiculos.stream().filter(list -> list.getTipovehiculo().equals("Motocicleta")).collect(Collectors.toList()).size()) >= 10)	
 			  throw new RuntimeException("No se permiten mas Motocicletas ");
