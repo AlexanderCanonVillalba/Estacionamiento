@@ -33,6 +33,7 @@ public class ParquearTest {
 	}
         
 	
+	/*
 	@Test
 	public void  registrarEntradaMoto() {
 		VehiculoDataBuilder vehiculoDataBuilder = new VehiculoDataBuilder();
@@ -42,4 +43,9 @@ public class ParquearTest {
 	}
         
 	
+	public void validarEntrada() {
+		VehiculoDataBuilder vehiculoDataBuilder = new VehiculoDataBuilder();
+		Parquear.registrarEntrada(vehiculoDataBuilder.buil());
+	}
+	*/
 }
