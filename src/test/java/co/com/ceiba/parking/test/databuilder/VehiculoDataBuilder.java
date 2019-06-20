@@ -20,14 +20,17 @@ public class VehiculoDataBuilder {
 	private String horaini;    	
 	private BigDecimal precio  ;
 	
+	private static String PLACA_VEHICULO = "ACV-0123";
+	private static String TIPO_VEHICULO = "Carro";
+	
 	public Vehiculo buil() {
 		Vehiculo vehiculo  =  new Vehiculo();
 		vehiculo.setId(1);
-		vehiculo.setPlaca("ACV-0123");
+		vehiculo.setPlaca(PLACA_VEHICULO);
 		vehiculo.setFechaini(Calendar.getInstance().getTime());
 		vehiculo.setHoraini("4:50");
 		vehiculo.setFechafin(Calendar.getInstance().getTime());
-		vehiculo.setTipovehiculo("Carro");
+		vehiculo.setTipovehiculo(TIPO_VEHICULO);
 		vehiculo.setPrecio(new BigDecimal(9000));
 		return vehiculo ;
 	}
