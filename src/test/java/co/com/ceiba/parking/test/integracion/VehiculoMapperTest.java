@@ -1,6 +1,7 @@
 package co.com.ceiba.parking.test.integracion;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -31,6 +32,12 @@ public class VehiculoMapperTest {
 		vehiculoEntidad = VehiculoMapper.entidad(vehiculo);
 		assertEquals(vehiculo.getPlaca(),vehiculoEntidad.getPlaca());			
 		assertEquals(vehiculo.getTipovehiculo() , vehiculoEntidad.getTipoVehiculo());
+		assertEquals(vehiculo.getId(), vehiculoEntidad.getId());
+		assertEquals(vehiculo.getFechaini(), vehiculoEntidad.getFechaini());
+		assertEquals(vehiculo.getHoraini(), vehiculoEntidad.getHoraini());
+		
+		assertNotNull(vehiculoEntidad);
+		assertNotNull(vehiculo);
 	}
 	
 
