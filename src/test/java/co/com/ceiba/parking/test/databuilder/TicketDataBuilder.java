@@ -2,6 +2,8 @@ package co.com.ceiba.parking.test.databuilder;
 
 import java.util.Date;
 
+import co.com.ceiba.parqueadero.domain.Ticket;
+
 public class TicketDataBuilder {
 
 	
@@ -36,5 +38,14 @@ public class TicketDataBuilder {
 	public TicketDataBuilder precio(double precio) {
 		this.precio = precio  ;
 		return this ;
+	}
+	
+	public Ticket build() {
+		Ticket ticket = new Ticket();
+		ticket.setId(1);
+		ticket.setVehiculo(null);
+		ticket.setFechaini(new Date());
+		ticket.setFechafin(new Date());
+		return ticket;
 	}
 }
