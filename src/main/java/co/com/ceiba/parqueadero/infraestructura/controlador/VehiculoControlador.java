@@ -48,7 +48,7 @@ public class VehiculoControlador {
 		      map.put("mensaje", e.getMessage());
 			return new ResponseEntity<Map<String, String>>(map , HttpStatus.INTERNAL_SERVER_ERROR);
 		}
-		
+		 
 	}
 	
 	@GetMapping(value =  "/listavehiculos")		
