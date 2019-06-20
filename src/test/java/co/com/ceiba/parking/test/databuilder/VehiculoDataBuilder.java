@@ -1,9 +1,12 @@
 package co.com.ceiba.parking.test.databuilder;
 
 import java.math.BigDecimal;
+import java.util.Calendar;
 import java.util.Date;
 
-import javax.persistence.Column;
+import co.com.ceiba.parqueadero.domain.Vehiculo;
+
+
 
 public class VehiculoDataBuilder {
 	
@@ -16,6 +19,18 @@ public class VehiculoDataBuilder {
 	private Date fechafin ;    
 	private String horaini;    	
 	private BigDecimal precio  ;
+	
+	public Vehiculo buil() {
+		Vehiculo vehiculo  =  new Vehiculo();
+		vehiculo.setId(1);
+		vehiculo.setPlaca("ACV-0123");
+		vehiculo.setFechaini(Calendar.getInstance().getTime());
+		vehiculo.setHoraini("4:50");
+		vehiculo.setFechafin(Calendar.getInstance().getTime());
+		vehiculo.setTipovehiculo("Carro");
+		vehiculo.setPrecio(new BigDecimal(9000));
+		return vehiculo ;
+	}
 	
 	
 	public VehiculoDataBuilder placa(String placa) {
@@ -39,17 +54,20 @@ public class VehiculoDataBuilder {
 	} 
 	
 	public VehiculoDataBuilder fechafin(Date fechafin) {
-		this.fechafin  = fechafin ;
+		this.fechafin = fechafin;
 		return this;
 	}
 	
 	public VehiculoDataBuilder horaini(String horaini) {
-		this.horaini = horaini ;
+		this.horaini = horaini;
 		return this;
 	} 
 	
 	public VehiculoDataBuilder precio(BigDecimal precio) {
-		this.precio = precio ;
+		this.precio = precio;
 		return this;
 	}
+	
+	
+	
 }

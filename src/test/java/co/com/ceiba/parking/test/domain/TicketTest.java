@@ -19,7 +19,11 @@ public class TicketTest {
 		TicketDataBuilder ticketDataBuilder  = new TicketDataBuilder();
 		
 		ticketDataBuilder.id(1)
-				.vehiculoid(1).fechafin(Calendar.getInstance().getTime()).precio(8000);
+				.vehiculoid(1)
+				.fechaini(Calendar.getInstance().getTime())
+				.fechafin(Calendar.getInstance().getTime())
+				.precio(8000);
+				
 		
 		assertNotNull(ticketDataBuilder);
 				
