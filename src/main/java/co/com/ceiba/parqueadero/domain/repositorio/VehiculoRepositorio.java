@@ -13,4 +13,7 @@ public interface VehiculoRepositorio {
 	public List<Vehiculo> Listado();
 	
 	public Vehiculo ConsultarId(long id);
+	
+	public Vehiculo eliminar(Vehiculo vehiculo);
+	
 }

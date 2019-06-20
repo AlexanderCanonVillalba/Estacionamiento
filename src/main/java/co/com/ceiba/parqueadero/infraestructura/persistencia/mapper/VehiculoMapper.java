@@ -1,5 +1,7 @@
 package co.com.ceiba.parqueadero.infraestructura.persistencia.mapper;
 
+import java.math.BigDecimal;
+
 import co.com.ceiba.parqueadero.domain.Vehiculo;
 import co.com.ceiba.parqueadero.infraestructura.persistencia.entidades.VehiculoEntidad;
 
@@ -14,6 +16,7 @@ public class VehiculoMapper {
 		vehiculo.setTipovehiculo(vehiculoEntidad.getTipoVehiculo());
 		vehiculo.setFechaini(vehiculoEntidad.getFechaini());
 		vehiculo.setHoraini(vehiculoEntidad.getHoraini());
+		vehiculo.setPrecio(vehiculoEntidad.getPrecio());
 		return vehiculo;
 	}
 	
@@ -26,6 +29,7 @@ public class VehiculoMapper {
 		vehiculoEntidad.setTipoVehiculo(vehiculo.getTipovehiculo());
 		vehiculoEntidad.setFechaini(vehiculo.getFechaini());
 		vehiculoEntidad.setHoraini(vehiculo.getHoraini());
+		vehiculoEntidad.setPrecio(vehiculoEntidad.getPrecio());
 		return vehiculoEntidad;
 	}
 }

@@ -1,5 +1,6 @@
 package co.com.ceiba.parqueadero.infraestructura.persistencia.entidades;
 
+import java.math.BigDecimal;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -40,4 +41,6 @@ public class VehiculoEntidad {
 	@Column(name = "horaini")
 	private String horaini;
 	
+	@Column(name  = "precio")
+	private BigDecimal precio  ;
 }

@@ -41,6 +41,17 @@ public class VehiculoRepositorioImpl implements VehiculoRepositorio{
 	@Override
 	public Vehiculo ConsultarId(long id) { 		
 		return VehiculoMapper.domain(vehiculoRepositorioJPA.getOne(id));
+		
 	}
 
+	@Override
+	public Vehiculo eliminar(Vehiculo vehiculo) {
+		System.err.println("repoistorio........" +  vehiculo.getPrecio());
+		vehiculoRepositorioJPA.delete(VehiculoMapper.entidad(vehiculo));
+		System.err.println("repoistorio 2........" +  vehiculo.getPrecio());
+		return vehiculo;
+	}
+
+	
+	
 }
