@@ -63,7 +63,7 @@ public class Parquear {
 	}
 	
 	
-	
+	/*
 	public Vehiculo salidaVehiculo(Vehiculo vehiculo) {
 		
 		
@@ -103,6 +103,6 @@ public class Parquear {
 	    	
 	}
 	
-	
+	*/
 	
 }

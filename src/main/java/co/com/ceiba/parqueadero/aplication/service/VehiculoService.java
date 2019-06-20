@@ -1,5 +1,6 @@
 package co.com.ceiba.parqueadero.aplication.service;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
@@ -28,10 +29,11 @@ public class VehiculoService {
 	public List<Vehiculo> listar(){
 		return vehiculoRepositorio.Listado();
 	}
-	
+	 
 	public Vehiculo salida(Vehiculo vehiculo) {
 		
-		Parquear.calcularPrecio(vehiculo);
+		//Parquear.calcularPrecio(vehiculo);
+		vehiculo.setPrecio(BigDecimal.ZERO);
 		System.err.println("precioooooo.... + " +  vehiculo.getPrecio());
 		vehiculoRepositorio.eliminar(vehiculo);
 		return vehiculo;
