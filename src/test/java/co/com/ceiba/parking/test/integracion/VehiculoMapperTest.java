@@ -40,5 +40,20 @@ public class VehiculoMapperTest {
 		assertNotNull(vehiculo);
 	}
 	
+	
+	@Test
+	public void vehiculoEntidadAVehiculoDominio() {
+		
+		vehiculoEntidad = vehiculoEntityTestDataBuilder.buil();
+		vehiculo = VehiculoMapper.domain(vehiculoEntidad);
+		assertEquals(vehiculo.getPlaca(),vehiculoEntidad.getPlaca());			
+		assertEquals(vehiculo.getTipovehiculo() , vehiculoEntidad.getTipoVehiculo());
+		assertEquals(vehiculo.getId(), vehiculoEntidad.getId());
+		assertEquals(vehiculo.getFechaini(), vehiculoEntidad.getFechaini());
+		assertEquals(vehiculo.getHoraini(), vehiculoEntidad.getHoraini());
+		
+		assertNotNull(vehiculoEntidad);
+		assertNotNull(vehiculo);
+	}
 
 }

@@ -34,19 +34,7 @@ public class Parquear {
 	}
 	
 	
-	public void consultarReserva(List<Vehiculo> lisVehiculos , String tipoVehiculo) {
-		
-		  
-		  if(tipoVehiculo.equals("Motocicleta")) {			  
-			  consultarReservaMotocicleta(lisVehiculos);
-             }
-	    else {
-	    	consultarReservaCarro(lisVehiculos);
-			  }
-		 
-			
-		 
-	}
+
 	
 	
 	public void consultarReservaCarro(List<Vehiculo> lisVehiculos) {

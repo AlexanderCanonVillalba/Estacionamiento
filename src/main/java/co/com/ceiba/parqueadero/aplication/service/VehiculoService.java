@@ -22,14 +22,15 @@ public class VehiculoService {
 	public Vehiculo registrar(Vehiculo vehiculo){
 		  Parquear parquear = new Parquear();
 		  parquear.registrarEntrada(vehiculo);	
-		  parquear.consultarReserva(listar() , vehiculo.getTipovehiculo());
+		  parquear.consultarReservaCarro(listar());
+		  parquear.consultarReservaMotocicleta(listar());
 		return	vehiculoRepositorio.registrar(vehiculo);			
 	}
 	
 	public List<Vehiculo> listar(){
 		return vehiculoRepositorio.Listado();
 	}
-	 
+	   
 	public Vehiculo salida(Vehiculo vehiculo) {
 		
 		//Parquear.calcularPrecio(vehiculo);
