@@ -19,7 +19,7 @@ public class ParquearTest {
 		vehiculo.setPlaca("ACB-000");
 		vehiculo.setTipovehiculo("Carro");
 		vehiculo.setFechaini(new Date());
-	//	parquear.registrarEntrada(vehiculo);
+		parquear.registrarEntrada(vehiculo);
 	}
         
 	
