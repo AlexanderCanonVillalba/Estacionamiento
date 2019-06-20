@@ -24,7 +24,6 @@ public class Parquear {
 		calendar.setTime(vehiculo.getFechaini());
 		calendar.add(Calendar.DAY_OF_MONTH, 1);
 		SimpleDateFormat dateFormat = new SimpleDateFormat("EEEE");
-		System.err.println(".................."+ dateFormat.format(calendar.getTime()) + "  "+ (!dateFormat.format(calendar.getTime()).equals("Monday")));
 		
 		if(vehiculo.getPlaca().substring(0 , 1).equals("A"))
 		if( (!dateFormat.format(calendar.getTime()).equals("Sunday"))  && (!dateFormat.format(calendar.getTime()).equals("Monday")) )
